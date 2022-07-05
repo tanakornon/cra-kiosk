@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\kiosk.csproj": {}
+  },
+  "projects": {
+    "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\kiosk.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\kiosk.csproj",
+        "projectName": "kiosk",
+        "projectPath": "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\kiosk.csproj",
+        "packagesPath": "C:\\Users\\Phinx\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Phinx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net462"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net462": {
+            "targetAlias": "net462",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net462": {
+          "targetAlias": "net462",
+          "dependencies": {
+            "Barcode": {
+              "target": "Package",
+              "version": "[2022.5.5918, )"
+            },
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[4.0.1.184, )"
+            },
+            "NFC-ACR122U": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

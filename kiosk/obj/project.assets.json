@@ -1,0 +1,211 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.2": {
+      "BarCode/2022.5.5918": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Drawing",
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net40/IronBarCode.dll": {}
+        },
+        "runtime": {
+          "lib/net40/IronBarCode.dll": {}
+        }
+      },
+      "MQTTnet/4.0.1.184": {
+        "type": "package",
+        "compile": {
+          "lib/net461/MQTTnet.dll": {}
+        },
+        "runtime": {
+          "lib/net461/MQTTnet.dll": {}
+        }
+      },
+      "NFC-ACR122U/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/PCSC.dll": {},
+          "lib/Sydesoft.NfcDevice.ACR122U.dll": {}
+        },
+        "runtime": {
+          "lib/PCSC.dll": {},
+          "lib/Sydesoft.NfcDevice.ACR122U.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.2/win7-x86": {
+      "BarCode/2022.5.5918": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Drawing",
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net40/IronBarCode.dll": {}
+        },
+        "runtime": {
+          "lib/net40/IronBarCode.dll": {}
+        }
+      },
+      "MQTTnet/4.0.1.184": {
+        "type": "package",
+        "compile": {
+          "lib/net461/MQTTnet.dll": {}
+        },
+        "runtime": {
+          "lib/net461/MQTTnet.dll": {}
+        }
+      },
+      "NFC-ACR122U/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/PCSC.dll": {},
+          "lib/Sydesoft.NfcDevice.ACR122U.dll": {}
+        },
+        "runtime": {
+          "lib/PCSC.dll": {},
+          "lib/Sydesoft.NfcDevice.ACR122U.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BarCode/2022.5.5918": {
+      "sha512": "9TpKBc5E+q/kErKUJexE1SmQ9qjRt8U86lLBPvjAyn+bglsAH1LGkMnbhNXvSbFmgmk/oULjMIAd7mtBs+b4Iw==",
+      "type": "package",
+      "path": "barcode/2022.5.5918",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.txt",
+        "barcode.2022.5.5918.nupkg.sha512",
+        "barcode.nuspec",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "lib/net40/IronBarCode.dll",
+        "lib/net40/IronBarCode.xml",
+        "lib/netstandard2.0/IronBarCode.dll",
+        "lib/netstandard2.0/IronBarCode.xml",
+        "readme-setup.txt",
+        "readme.txt"
+      ]
+    },
+    "MQTTnet/4.0.1.184": {
+      "sha512": "vcWMbHUNWOb9LwfJzBAWW5UzUm/nRqS20UhoSbGeVwzAGHzjZFtLMAoHzK7uoWq/yBhH6ZsPmUosXnD07NkkjQ==",
+      "type": "package",
+      "path": "mqttnet/4.0.1.184",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MQTTnet.dll",
+        "lib/net452/MQTTnet.xml",
+        "lib/net461/MQTTnet.dll",
+        "lib/net461/MQTTnet.xml",
+        "lib/net5.0/MQTTnet.dll",
+        "lib/net5.0/MQTTnet.xml",
+        "lib/net6.0/MQTTnet.dll",
+        "lib/net6.0/MQTTnet.xml",
+        "lib/netcoreapp3.1/MQTTnet.dll",
+        "lib/netcoreapp3.1/MQTTnet.xml",
+        "lib/netstandard1.3/MQTTnet.dll",
+        "lib/netstandard1.3/MQTTnet.xml",
+        "lib/netstandard2.0/MQTTnet.dll",
+        "lib/netstandard2.0/MQTTnet.xml",
+        "lib/netstandard2.1/MQTTnet.dll",
+        "lib/netstandard2.1/MQTTnet.xml",
+        "lib/uap10.0.10240/MQTTnet.dll",
+        "lib/uap10.0.10240/MQTTnet.pri",
+        "lib/uap10.0.10240/MQTTnet.xml",
+        "mqttnet.4.0.1.184.nupkg.sha512",
+        "mqttnet.nuspec",
+        "nuget.png"
+      ]
+    },
+    "NFC-ACR122U/1.0.0": {
+      "sha512": "ExfCv15ocDUR2u5SA4FH/4dC8Gp/0TzNKWx0/A/HfKDveLuK7pPRDis7vz1A6MkM9AR+p/+x6lKIqjiBKcw9Pg==",
+      "type": "package",
+      "path": "nfc-acr122u/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/PCSC.dll",
+        "lib/Sydesoft.NfcDevice.ACR122U.dll",
+        "nfc-acr122u.1.0.0.nupkg.sha512",
+        "nfc-acr122u.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.2": [
+      "Barcode >= 2022.5.5918",
+      "MQTTnet >= 4.0.1.184",
+      "NFC-ACR122U >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Phinx\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\kiosk.csproj",
+      "projectName": "kiosk",
+      "projectPath": "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\kiosk.csproj",
+      "packagesPath": "C:\\Users\\Phinx\\.nuget\\packages\\",
+      "outputPath": "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Phinx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net462"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net462": {
+          "targetAlias": "net462",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net462": {
+        "targetAlias": "net462",
+        "dependencies": {
+          "Barcode": {
+            "target": "Package",
+            "version": "[2022.5.5918, )"
+          },
+          "MQTTnet": {
+            "target": "Package",
+            "version": "[4.0.1.184, )"
+          },
+          "NFC-ACR122U": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
+      }
+    }
+  }
+}

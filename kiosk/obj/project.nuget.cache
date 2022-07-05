@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "2O5bpf7mbvs6vHCuTih3RMpUqhzhFvCYkhdr9J82ipe6DJUKDQEfaVBxdP4ccuTZBJ9Slp/PYMq34HES7aUacg==",
+  "success": true,
+  "projectFilePath": "D:\\Work\\Mines Stream Technology\\CRA\\kiosk\\kiosk\\kiosk\\kiosk.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Phinx\\.nuget\\packages\\barcode\\2022.5.5918\\barcode.2022.5.5918.nupkg.sha512",
+    "C:\\Users\\Phinx\\.nuget\\packages\\mqttnet\\4.0.1.184\\mqttnet.4.0.1.184.nupkg.sha512",
+    "C:\\Users\\Phinx\\.nuget\\packages\\nfc-acr122u\\1.0.0\\nfc-acr122u.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
