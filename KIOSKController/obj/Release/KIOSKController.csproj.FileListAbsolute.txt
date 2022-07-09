@@ -1,0 +1,16 @@
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\KIOSKController.exe.config
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\KIOSKController.exe
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\KIOSKController.pdb
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\IronBarCode.dll
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\MQTTnet.dll
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\IronBarCode.xml
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\MQTTnet.xml
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.csproj.AssemblyReference.cache
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.csproj.SuggestedBindingRedirects.cache
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.Home.resources
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.Properties.Resources.resources
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.csproj.GenerateResource.cache
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.csproj.CoreCompileInputs.cache
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.csproj.CopyComplete
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.exe
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.pdb
