@@ -2,6 +2,7 @@
 using MQTTnet.Client;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -14,6 +15,12 @@ namespace KIOSKController.services
         private readonly MqttFactory Factory;
         private readonly IMqttClient Client;
 
+        readonly string cliendId = ConfigurationManager.AppSettings["mqttClientId"];
+        readonly string ip = ConfigurationManager.AppSettings["mqttEndpoint"];
+        readonly int port = Int32.Parse(ConfigurationManager.AppSettings["mqttPort"]);
+        readonly string username = ConfigurationManager.AppSettings["mqttUsername"];
+        readonly string password = ConfigurationManager.AppSettings["mqttPassword"];
+
         public MqttClient()
         {
             var factory = new MqttFactory();
@@ -21,13 +28,24 @@ namespace KIOSKController.services
             Client = factory.CreateMqttClient();
         }
 
-        public void Connect(string cliendId, string ip, int port)
+        public void Connect()
         {
-            var options = new MqttClientOptionsBuilder()
+            MqttClientOptions options;
+            var builder = new MqttClientOptionsBuilder()
                 .WithClientId(cliendId)
                 .WithTcpServer(ip, port)
-                .WithCleanSession()
-                .Build();
+                .WithCleanSession();
+
+            if (password != "")
+            {
+                builder.WithCredentials(username, password);
+            }
+            else if (username != "")
+            {
+                builder.WithCredentials(username);
+            }
+    
+            options = builder.Build();
 
             try
             {

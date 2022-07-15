@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,40 +14,38 @@ namespace KIOSKController
 {
     public partial class Home : Form
     {
-        private const string MAC_ADDRESS = "<mac>";
-
-        private MqttClient mqtt = new MqttClient();
+        private readonly string deviceId = ConfigurationManager.AppSettings["deviceId"];
 
         public Home()
         {
             InitializeComponent();
 
-            // MqttClient mqtt = new MqttClient();
-
-            
-            /*
-            mqtt.Connect(MAC_ADDRESS, "localhost", 1883);
+            MqttClient mqtt = new MqttClient();
+            mqtt.Connect();
 
             Task.Run(() => NFCCardReader(mqtt));
-            Task.Run(() => QRScanner(mqtt));
             Task.Run(() => Printer(mqtt));
-            */
+            QRScanner(mqtt);
         }
 
         private void BTNStart_Click(object sender, EventArgs e)
         {
-            mqtt.Publish($"/dev/qrscan/{MAC_ADDRESS}", "test");
+
         }
 
-        private async void NFCCardReader(MqttClient mqtt)
+        private void BTNPrint_Click(object sender, EventArgs e)
+        {
+            MsPrinter printer = new MsPrinter();
+            printer.Print("test.bmp");
+        }
+
+        private void NFCCardReader(MqttClient mqtt)
         {
             Console.WriteLine("Start ACR122U Card Reader.");
 
             async void Publish(string data)
             {
-                string payload = "RFID";
-
-                await mqtt.Publish($"/dev/RFID/{MAC_ADDRESS}", payload);
+                await mqtt.Publish($"/dev/RFID/{deviceId}", data);
             }
 
             CardReader cardReader = new CardReader(Publish);
@@ -54,44 +53,44 @@ namespace KIOSKController
             while (true) ;
         }
 
-        private async void QRScanner(MqttClient mqtt)
+        private void QRScanner(MqttClient mqtt)
         {
             Console.WriteLine("Start QR Scanner.");
 
-
-
-            USBReader usbReader = new USBReader(0x046D, 0x024F);
-            usbReader.Start();
-
-            while (true)
+            async void Publish(string data)
             {
-                // var keyPressed = KeyboardReader.Readline();
-
-
-                // await mqtt.Publish($"/dev/qrscan/{MAC_ADDRESS}", keyPressed);
+                await mqtt.Publish($"/dev/qrscan/{deviceId}", data);
             }
+
+            InterceptKeys.Hook();
+            InterceptKeys.Callback = Publish;
         }
 
         private async void Printer(MqttClient mqtt)
         {
-            Console.WriteLine("Start Printer.");
-
-            async void Subscribe(string payload)
+            try
             {
-                string sourceFile = payload;
-                string targetFile = payload;
+                Console.WriteLine("Start Printer.");
 
-                ImageProcesser.ConvertTo1Bpp(sourceFile, targetFile);
+                async void Subscribe(string payload)
+                {
+                    string sourceFile = payload;
+                    string targetFile = payload;
 
-                MsPrinter printer = new MsPrinter();
-                printer.Print(targetFile);
+                    ImageProcessor.ConvertTo1Bpp(sourceFile, targetFile);
 
-                await mqtt.Publish($"/dev/kiosk/{MAC_ADDRESS}/entry", payload);
+                    MsPrinter printer = new MsPrinter();
+                    printer.Print(targetFile);
+
+                    await mqtt.Publish($"/dev/kiosk/{deviceId}/entry", payload);
+                }
+
+                await mqtt.Subscribe($"/dev/kiosk/{deviceId}/qrprint", Subscribe);
             }
-
-            await mqtt.Subscribe($"/dev/kiosk/{MAC_ADDRESS}/qrprint", Subscribe);
-
-            Console.WriteLine("Stop Printer.");
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
     }
 }

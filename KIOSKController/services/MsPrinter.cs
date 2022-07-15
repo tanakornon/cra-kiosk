@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -87,10 +88,12 @@ namespace KIOSKController.services
 
         int m_iInit = -1;
 
+        private readonly string port = ConfigurationManager.AppSettings["printerPort"];
+
         public void Print(string fileName = "qrcode.bmp")
         {
             //--------------for comport
-            StringBuilder sPort = new StringBuilder("COM3");
+            StringBuilder sPort = new StringBuilder(port);
             int iBaudrate = 115200;
             SetPrintport(sPort, iBaudrate);
             //------------------------------
@@ -103,20 +106,26 @@ namespace KIOSKController.services
 
             if (m_iInit == 0)
             {
-                SetClean();
-                StringBuilder sbData = new StringBuilder(fileName);
-                PrintDiskimgfile(sbData);
+                try
+                {
+                    SetClean();
+                    StringBuilder sbData = new StringBuilder(fileName);
+                    PrintDiskimgfile(sbData);
 
-                byte[] bByte = new byte[2];
-                bByte[0] = 0x1D;
-                bByte[1] = 0x0C;
-                PrintTransmit(bByte, 2);
+                    byte[] bByte = new byte[2];
+                    bByte[0] = 0x1D;
+                    bByte[1] = 0x0C;
+                    PrintTransmit(bByte, 2);
 
-                PrintCutpaper(0);
+                    PrintCutpaper(0);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
             else
             {
-                // Console.WriteLine($"Can't init printer.");
                 MessageBox.Show($"Can't init printer.");
             }
         }

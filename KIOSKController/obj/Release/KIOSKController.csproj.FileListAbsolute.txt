@@ -14,3 +14,5 @@ D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Re
 D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.csproj.CopyComplete
 D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.exe
 D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\obj\Release\KIOSKController.pdb
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\PCSC.dll
+D:\Work\Mines Stream Technology\CRA\kiosk\KIOSKController\KIOSKController\bin\Release\Sydesoft.NfcDevice.ACR122U.dll

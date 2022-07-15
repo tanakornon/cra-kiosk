@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KIOSKController.services
 {
@@ -16,22 +17,31 @@ namespace KIOSKController.services
         {
             Callback = callback;
 
-            acr122u = new ACR122U();
-            acr122u.Init(false, 50, 4, 4, 200); // NTAG213
-            acr122u.CardInserted += CardInserted;
-            acr122u.CardRemoved += CardRemoved;
+            try
+            {
+                acr122u = new ACR122U();
+                acr122u.Init(false, 50, 4, 4, 200); // NTAG213
+                acr122u.CardInserted += CardInserted;
+                acr122u.CardRemoved += CardRemoved;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        private string BytesToHexString(byte[] bytes)
+        {
+            return BitConverter.ToString(bytes).Replace("-", "");
         }
 
         private void CardInserted(PCSC.ICardReader reader)
         {
             Console.WriteLine("NFC tag placed on reader.");
-            Console.WriteLine("Unique ID: " + BitConverter
-                .ToString(acr122u.GetUID(reader))
-                .Replace("-", "")
-            );
+            Console.WriteLine("Unique ID: " + BytesToHexString(acr122u.GetUID(reader)));
 
             byte[] rawData = acr122u.ReadData(reader);
-            string strData = Encoding.UTF8.GetString(rawData);
+            string strData = BytesToHexString(rawData);
 
             Callback(strData);
         }
